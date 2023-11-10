@@ -73,7 +73,7 @@ const Child = () => {
     <Pressable
       style={ { marginVertical: 40 } }
       onPress={ () => {
-        setIsTimestamp( true )
+        setIsTimestamp( t => !t )
       } }>
       <Text>Insert { isTimestamp ? 'Integer' : 'Timestamp' }</Text>
     </Pressable>
