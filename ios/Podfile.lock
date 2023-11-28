@@ -1,28 +1,28 @@
 PODS:
   - boost (1.76.0)
   - DoubleConversion (1.1.6)
-  - EXConstants (15.2.0):
+  - EXConstants (15.3.0):
     - ExpoModulesCore
-  - EXFont (11.8.0):
+  - EXFont (11.9.0):
     - ExpoModulesCore
-  - Expo (50.0.0-alpha.6):
+  - Expo (50.0.0-alpha.7):
     - ExpoModulesCore
-  - ExpoApplication (5.6.0):
+  - ExpoApplication (5.7.0):
     - ExpoModulesCore
-  - ExpoFileSystem (15.8.0):
+  - ExpoFileSystem (15.9.0):
     - ExpoModulesCore
-  - ExpoKeepAwake (12.7.0):
+  - ExpoKeepAwake (12.8.0):
     - ExpoModulesCore
-  - ExpoModulesCore (1.9.0):
+  - ExpoModulesCore (1.10.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - React-NativeModulesApple
     - React-RCTAppDelegate
     - ReactCommon/turbomodule/core
-  - ExpoSQLite (12.0.0):
+  - ExpoSQLite (12.2.0):
     - ExpoModulesCore
     - sqlite3 (~> 3.42.0)
-  - EXSplashScreen (0.24.0):
+  - EXSplashScreen (0.25.0):
     - ExpoModulesCore
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -617,15 +617,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
-  EXConstants: 1734e43270773c7e22c50492bcbd3c2557f4bf14
-  EXFont: f229885758944aad44348468d62a3493012decd6
-  Expo: a0d8fe46ad02731a3f8df4bee9792154ad72bff1
-  ExpoApplication: 47646ff8a434290959a73f131cba7a96eba2be9e
-  ExpoFileSystem: 9920645fb15201acac21ee631799ac9bfcad8479
-  ExpoKeepAwake: 1ced2ebbeb594a66462568a7b7d9ac06f88abe89
-  ExpoModulesCore: c18917c5a1e6e637e039d07069cebdc088b37475
-  ExpoSQLite: f77ef48850c7b2e6573812f0ad2fb46bf0c6eefb
-  EXSplashScreen: 4823f5693944dedee7c4147567a548efb7100f2a
+  EXConstants: adcf913f005bb3a6eba1f89c34090bed5a0b89f7
+  EXFont: 0a688bc37845f2665376c8c93a822fe5483dae37
+  Expo: 97df3b68de6c485f894dbae821666bec8435e144
+  ExpoApplication: 729c272c3217ecd40aabba16c4d5536148ed466b
+  ExpoFileSystem: 1bc21c70ab0bf505cd6bef97c5b008618bfb72f2
+  ExpoKeepAwake: ed71bfe0e6ecd38e337586ba6e1ba27a56eb373b
+  ExpoModulesCore: 2f35478e307578d2cee0674e2f15dace619894fd
+  ExpoSQLite: b545b90ae59f5fab6d9ea53dd64eef5a1aef1afe
+  EXSplashScreen: 00647394dd63da9b4a3b799a3a9aa541abdb10e0
   FBLazyVector: 71803c074f6325f10b5ec891c443b6bbabef0ca7
   FBReactNativeSpec: 448e08a759d29a96e15725ae532445bf4343567c
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
@@ -668,6 +668,6 @@ SPEC CHECKSUMS:
   sqlite3: f163dbbb7aa3339ad8fc622782c2d9d7b72f7e9c
   Yoga: 86fed2e4d425ee4c6eab3813ba1791101ee153c6
 
-PODFILE CHECKSUM: 2274a5f83eec22e75e4173a03e44ab5fedba4384
+PODFILE CHECKSUM: 795fc5c36e4210fe3883f7fbc5c83efdd37cbcfd
 
 COCOAPODS: 1.14.2
