@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import { useEffect, useState } from 'react'
 import { openDatabaseSync, SQLiteProvider, useSQLiteContext, addDatabaseChangeListener } from 'expo-sqlite/next';
+import * as FileSystem from 'expo-file-system';
 import React from 'react';
 import { Pressable } from 'react-native';
 
@@ -9,11 +10,22 @@ const db = openDatabaseSync( ':memory:', {
   enableChangeListener: true
 } );
 
-db.execSync(
-  'CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY NOT NULL, value TEXT NOT NULL, intValue INTEGER)'
-);
+const attachDbName = 'attach.db'
 
-const insertRow = ( isTimestamp = false ) => db.runSync( 'INSERT INTO test (value, intValue) VALUES (?, ?)', 'test', isTimestamp ? Date.now() : 123 )
+// - open and close db to ensure it exists
+const testAttachDb = openDatabaseSync( attachDbName );
+
+const createTestTableSql =
+  'CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY NOT NULL, value TEXT NOT NULL, intValue INTEGER)'
+
+db.execSync( createTestTableSql );
+
+testAttachDb.execSync( createTestTableSql )
+testAttachDb.execSync( createTestTableSql )
+console.log( `existing ${attachDbName} db - `, testAttachDb.execSync( createTestTableSql ) )
+testAttachDb.closeSync()
+
+const insertRow = ( isTimestamp = false ) => db.runSync( 'INSERT INTO test (value, intValue) VALUES (?, ?)', '👍', isTimestamp ? Date.now() : 123 )
 const truncate = () => db.runSync( 'DELETE FROM test' )
 
 console.log( 'insert - ', insertRow() );
@@ -41,6 +53,13 @@ const Child = () => {
   const [rows, setRows] = useState( database.allSync( 'SELECT * FROM test' ) )
 
   const refreshRows = () => setRows( database.allSync( 'SELECT * FROM test' ) )
+
+  useEffect( () => {
+    database.execSync( `ATTACH '${FileSystem.documentDirectory}/SQLite/${attachDbName}' as attached` )
+    // database.execSync( `ATTACH '${attachDbName}' as attached` )
+
+    console.log( 'database list - ', database.allSync( 'PRAGMA database_list' ) )
+  }, [] )
 
   useEffect( () => {
     const subscription = addDatabaseChangeListener( ( change ) => {
